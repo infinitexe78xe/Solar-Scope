@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <title>Solar System Planets</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Honk&family=Monoton&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Honk&family=Monoton&family=Montserrat:wght@500&display=swap')
+  </style>
+</head>
+
+<body>
+    <h1 id="planetName"></h1>
+    <img id="planetImage" src="" alt="Planet Image">
+    <p>Gravity: <span id="gravity"></span></p>
+    <p>Mass: <span id="mass"></span></p>
+    <p>Temperature: <span id="temperature"></span></p>
+    <p>Composition: <span id="composition"></span></p>
+    <p>Distance from Earth: <span id="distance"></span></p>
+    <p>Day Period: <span id="day_period"></span></p>
+
+    <button id="prevBtn" onclick="showPreviousPlanet()">Prev</button>
+    <button id="nextBtn" onclick="showNextPlanet()">   Next   </button>
+
+    <script>
+        const planets = [
+            { name: "Sun", image: "sun.jpg", gravity: "274.0 m/s²", mass: "1.989 × 10^30 kg", temperature: "15 million °C", composition: "Hydrogen, Helium", distance: "149.6 million km", day_period: "25-35 days" },
+            { name: "Mercury", image: "mercury.jpg", gravity: "3.7 m/s²", mass: "0.330 x 10^24 kg", temperature: "430°C", composition: "Iron, Nickel", distance: "77 million km", day_period: "58.6 days" },
+            { name: "Venus", image: "venus.jpg", gravity: "8.87 m/s²", mass: "4.87 x 10^24 kg", temperature: "471°C", composition: "Carbon Dioxide, Sulfuric Acid", distance: "261 million km", day_period: "243 days" },
+            { name: "Earth", image: "earth.jpg", gravity: "9.81 m/s²", mass: "5.97 x 10^24 kg", temperature: "15°C", composition: "Water, Rock", distance: "149.6 million km", day_period: "24 hours" },
+            { name: "Mars", image: "mars.jpg", gravity: "3.7 m/s²", mass: "0.642 x 10^24 kg", temperature: "-65°C", composition: "Iron, Magnesium, Sulfur", distance: "227.9 million km", day_period: "24.6 hours" },
+            { name: "Jupiter", image: "jupiter.jpg", gravity: "24.79 m/s²", mass: "1898 x 10^24 kg", temperature: "-145°C", composition: "Hydrogen, Helium", distance: "778.5 million km", day_period: "9.9 hours" },
+            { name: "Saturn", image: "saturn.jpg", gravity: "10.44 m/s²", mass: "568 x 10^24 kg", temperature: "-178°C", composition: "Hydrogen, Helium", distance: "1.43 billion km", day_period: "10.7 hours" },
+            { name: "Uranus", image: "uranus.jpg", gravity: "8.69 m/s²", mass: "86.8 x 10^24 kg", temperature: "-224°C", composition: "Water, Ammonia, Methane", distance: "2.87 billion km", day_period: "17.2 hours" },
+            { name: "Neptune", image: "neptune.jpg", gravity: "11.15 m/s²", mass: "102 x 10^24 kg", temperature: "-214°C", composition: "Hydrogen, Helium, Methane", distance: "4.5 billion km", day_period: "16.1 hours" },
+            { name: "Pluto", image: "pluto.jpg", gravity: "0.62 m/s²", mass: "0.0146 x 10^24 kg", temperature: "-229°C", composition: "Nitrogen, Methane, Carbon Monoxide", distance: "5.9 billion km", day_period: "153.3 hours" }
+        ];
+
+        let currentPlanetIndex = 0;
+
+        function showPlanet(index) {
+            document.getElementById("planetName").textContent = planets[index].name;
+            document.getElementById("planetImage").src = planets[index].image;
+            document.getElementById("gravity").textContent = planets[index].gravity;
+            document.getElementById("mass").textContent = planets[index].mass;
+            document.getElementById("temperature").textContent = planets[index].temperature;
+            document.getElementById("composition").textContent = planets[index].composition;
+            document.getElementById("distance").textContent = planets[index].distance;
+            document.getElementById("day_period").textContent = planets[index].day_period;
+        }
+
+        function showPreviousPlanet() {
+            if (currentPlanetIndex > 0) {
+                currentPlanetIndex--;
+                showPlanet(currentPlanetIndex);
+            }
+        }
+
+        function showNextPlanet() {
+            if (currentPlanetIndex < planets.length - 1) {
+                currentPlanetIndex++;
+                showPlanet(currentPlanetIndex);
+            }
+        }
+
+        showPlanet(currentPlanetIndex);
+    </script>
+</body>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Honk&family=Monoton&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Honk&family=Monoton&family=Montserrat:wght@500&display=swap')
+  </style>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Honk&family=Monoton&family=Montserrat:wght@500&display=swap')
+  </style>
+</head>
+</html>
+
+
+<style>
+  img {
+    width: 450px;
+    height: 450px;
+    justify-content: left;
+   
+  }
+</style>
+
+<!-- HTML !-->
+
+
+<p>created by aidenTG</p>
+<a href="default.asp" target="_blank">Spurce code</a>
